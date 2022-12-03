@@ -67,3 +67,19 @@ router.delete('/post/delete/:id',(req,res) => {
 });
 
 module.exports = router;
+
+//Get a specific post
+
+router.get('/post/:id',(req,res) => {
+    let postId = req.params.id;
+    
+    Posts.findById(postId,(err,post) => {
+        if(err){
+            return res.status(400).json({success:false, err});
+        }
+        return res.status(200).json({
+            success:true,
+            post
+        });
+    });
+});
