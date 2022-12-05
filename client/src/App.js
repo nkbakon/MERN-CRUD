@@ -10,8 +10,8 @@ export default class App extends Component {
   render() { 
     return (
       <BrowserRouter>
-        <div className='container'>
         <NavBar/>
+        <div className='container'>        
         <Routes>          
           <Route exact path="/" element ={<Home/>}></Route>
           <Route path="/add" element={<CreatePost/>}></Route>
