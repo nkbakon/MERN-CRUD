@@ -29,7 +29,7 @@ export default class Home extends Component {
     return (
       <div className='container'>
         <p>All Posts</p>
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -41,7 +41,7 @@ export default class Home extends Component {
           </thead>
           <tbody>
             {this.state.posts.map((posts,index) => (
-              <tr>
+              <tr key={index}>
                 <th scope="row">{index+1}</th>
                 <td>
                     <a href={`/post/${posts._id}`} style={{textDecoration:'none'}}>
@@ -51,11 +51,11 @@ export default class Home extends Component {
                 <td>{posts.description}</td>
                 <td>{posts.postCategory}</td>
                 <td>
-                  <a className='btn btn-warning' href='#'>
+                  <a className='btn btn-warning' href='/edit'>
                     <i className='fas fa-edit'></i>&nbsp;Edit
                   </a>
                   &nbsp;
-                  <a className='btn btn-danger' href='#'>
+                  <a className='btn btn-danger' href='/'>
                     <i className='far fa-trash-alt'></i>&nbsp;Delete
                   </a>
                 </td>
